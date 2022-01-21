@@ -101,8 +101,8 @@ session_start();
         </div>
       </div>
     </nav>
-
-    <div class="card information">
+      <div class="row">
+        <div class="card information col-sm-7">
           <p class="card-title-head"><b>ตารางการรับประทานยาของผู้ป่วย</b></p>
           <table class="table">
             <thead>
@@ -167,7 +167,7 @@ session_start();
                     <div id="id10" class="w3-modal">
                       <div
                         class="w3-modal-content w3-card-4 w3-animate-zoom"
-                        style="max-width: 600px"
+                        style="max-width: 800px"
                       >
                         <div class="w3-center">
                           <br />
@@ -263,53 +263,83 @@ session_start();
                     </div>
                   </div>
                 </td>
-                <td class="align-middle" >
-                  <input type="text" id="setnumber" class="w3-input w3-margin-bottom">
+                <td class="align-middle">
+                  <input type="text" id="setnumber1" class="w3-input w3-margin-bottom setnumber">
                   </input>
                 </td>
               </tr>
               <tr>
                 <td class="align-middle">หลังอาหาร</td>
                 <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                  <input type="text" id="setnumber2" class="w3-input w3-margin-bottom setnumber">
+                  </input>
+                </td>
               </tr>
               <tr>
                 <td class="align-middle" rowspan="2">กลางวัน</td>
                 <td class="align-middle">ก่อนอาหาร</td>
                 <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                  <input type="text" id="setnumber3" class="w3-input w3-margin-bottom setnumber">
+                  </input>
+                </td>
               </tr>
               <tr>
                 <td class="align-middle">หลังอาหาร</td>
                 <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                  <input type="text" id="setnumber4" class="w3-input w3-margin-bottom setnumber">
+                  </input>
+                </td>
     
               </tr>
               <tr>
                 <td class="align-middle" rowspan="2">เย็น</td>
                 <td class="align-middle">ก่อนอาหาร</td>
                 <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                  <input type="text" id="setnumber5" class="w3-input w3-margin-bottom setnumber">
+                  </input>
+                </td>
               </tr>
               <tr>
                 <td class="align-middle">หลังอาหาร</td>
                 <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                  <input type="text" id="setnumber6" class="w3-input w3-margin-bottom setnumber">
+                  </input>
+                </td>
               </tr>
               <tr>
                 <td class="align-middle" colspan="2">ก่อนนอน</td>
                 <td class="align-middle"></td>
-                <td class="align-middle"></td>
+                <td class="align-middle">
+                  <input type="text" id="setnumber7" class="w3-input w3-margin-bottom setnumber">
+                  </input>
+                </td>
               </tr>
             </tbody>
           </table>
           <br />
-          <p class="card-text">*จดบันทึกทุกครั้งที่ลืมรับประทานยา</p>
         </div>
-        <div class="w3-container container">
+        <div class="col-sm-3">
+          <label class="w3-margin-bottom card-title-head_1"><b>วิธีปฎิบัติตัวกรณีลืมรับประทานยา</b></label>
+          <div class="card_1">
+            <label class="information_1"><b>กรณีลืมทานยาไม่เกิน 12 ชั่วโมง</b>&nbsp;นับจากเวลาเดิมที่เคยกินให้รีบทานทันทีที่นึกขึ้นได้ในขนาดยาเท่าเดิม</label>
+          </div>
+          <br/>
+          <div class="card_1">
+            <label class="information_1"><b>กรณีลืมทานยาเกิน 12 ชั่วโมง</b>&nbsp;ไปแล้วให้ข้ามยามื้อนั้นไปและทานมื้อต่อไปในขนาดเดิม เวลาเดิมโดยไม่ต้องเพิ่มขนาดยาเป็น 2 เท่า</label>
+          </div>
+          <br/>
+          <button type="button" name="print" id="print" class="btn-last" onclick="window.print();">Print</button>
+        </div>
+      </div>
+      <div class="w3-container container">
           <button
             onclick="document.getElementById('id01').style.display='block'"
-            class="w3-button w3-green w3-large"
+            class="w3-button w3-green w3-large" id="btn_01"
           >
             ยืนยันการรับประทานยา
           </button>
@@ -342,7 +372,7 @@ session_start();
                   >
                   <br/>
                   <hr/>
-                    <p id="quantity-error"></p>
+                    <p id="quantity1-error"></p>
                     <divs class="row row-cols-lg-auto input-from">
                       <input
                         class="w3-input w3-border w3-margin-bottom sizetext"
@@ -356,8 +386,8 @@ session_start();
                       <input
                         class="w3-input w3-border w3-margin-bottom"
                         type="number"
-                        id="quantity"
-                        name="quantity"
+                        id="quantity1"
+                        name="quantity1"
                         min="0"
                         max="5"
                         required
@@ -369,13 +399,14 @@ session_start();
                         type="text" id="Result" name="Result1"
                       />
                     </div>
-                    <!-- <div class="row row-cols-lg-auto input-from">
+                    <p id="quantity2-error"></p>
+                    <div class="row row-cols-lg-auto input-from">
                       <input
                         class="w3-input w3-border w3-margin-bottom sizetext"
                         type="text"
                         placeholder="รายการยา"
-                        name="name2"
-                        id="name2"
+                        name="name"
+                        id="name"
                         required
                       />
                       <label class="text">จำนวน</label>
@@ -394,13 +425,15 @@ session_start();
                         class="w3-input w3-margin-bottom sizetextResult"
                         type="text" id="Result2" name="Result2"
                       />
-                    </div> -->
-                    <!-- <hr/>
+                    </div>
+                    <hr/>
+                    <p id="quantity3-error"></p>
                     <div class="row row-cols-lg-auto input-from">
                       <input
                         class="w3-input w3-border w3-margin-bottom sizetext"
                         type="text"
                         placeholder="รายการยา"
+                        id="name"
                         name="name"
                         required
                       />
@@ -408,8 +441,8 @@ session_start();
                       <input
                         class="w3-input w3-border w3-margin-bottom"
                         type="number"
-                        id="quantity"
-                        name="quantity"
+                        id="quantity3"
+                        name="quantity3"
                         min="0"
                         max="5"
                         required
@@ -421,11 +454,13 @@ session_start();
                         type="text"
                       />
                     </div>
+                    <p id="quantity4-error"></p>
                     <div class="row row-cols-lg-auto input-from">
                       <input
                         class="w3-input w3-border w3-margin-bottom sizetext"
                         type="text"
                         placeholder="รายการยา"
+                        id="name"
                         name="name"
                         required
                       />
@@ -433,8 +468,8 @@ session_start();
                       <input
                         class="w3-input w3-border w3-margin-bottom"
                         type="number"
-                        id="quantity"
-                        name="quantity"
+                        id="quantity4"
+                        name="quantity4"
                         min="0"
                         max="5"
                         required
@@ -447,11 +482,13 @@ session_start();
                       />
                     </div>
                     <hr/>
+                    <p id="quantity5-error"></p>
                     <div class="row row-cols-lg-auto input-from">
                       <input
                         class="w3-input w3-border w3-margin-bottom sizetext"
                         type="text"
                         placeholder="รายการยา"
+                        id="name"
                         name="name"
                         required
                       />
@@ -459,8 +496,8 @@ session_start();
                       <input
                         class="w3-input w3-border w3-margin-bottom"
                         type="number"
-                        id="quantity"
-                        name="quantity"
+                        id="quantity5"
+                        name="quantity5"
                         min="0"
                         max="5"
                         required
@@ -472,11 +509,13 @@ session_start();
                         type="text"
                       />
                     </div>
+                    <p id="quantity6-error"></p>
                     <div class="row row-cols-lg-auto input-from">
                       <input
                         class="w3-input w3-border w3-margin-bottom sizetext"
                         type="text"
                         placeholder="รายการยา"
+                        id="name"
                         name="name"
                         required
                       />
@@ -484,8 +523,8 @@ session_start();
                       <input
                         class="w3-input w3-border w3-margin-bottom"
                         type="number"
-                        id="quantity"
-                        name="quantity"
+                        id="quantity6"
+                        name="quantity6"
                         min="0"
                         max="5"
                         required
@@ -498,11 +537,13 @@ session_start();
                       />
                     </div>
                     <hr/>
+                    <p id="quantity7-error"></p>
                     <div class="row row-cols-lg-auto input-from">
                       <input
                         class="w3-input w3-border w3-margin-bottom sizetext"
                         type="text"
                         placeholder="รายการยา"
+                        id="name"
                         name="name"
                         required
                       />
@@ -510,8 +551,8 @@ session_start();
                       <input
                         class="w3-input w3-border w3-margin-bottom"
                         type="number"
-                        id="quantity"
-                        name="quantity"
+                        id="quantity7"
+                        name="quantity7"
                         min="0"
                         max="5"
                         required
@@ -523,31 +564,6 @@ session_start();
                         type="text"
                       />
                     </div>
-                    <div class="row row-cols-lg-auto input-from">
-                      <input
-                        class="w3-input w3-border w3-margin-bottom sizetext"
-                        type="text"
-                        placeholder="รายการยา"
-                        name="name"
-                        required
-                      />
-                      <label class="text">จำนวน</label>
-                      <input
-                        class="w3-input w3-border w3-margin-bottom"
-                        type="number"
-                        id="quantity"
-                        name="quantity"
-                        min="0"
-                        max="5"
-                        required
-                      />
-                      <label class="text">เม็ด/ครั้ง</label>
-                      <label class="text">หมายเหตุ :</label>
-                      <input
-                        class="w3-input w3-margin-bottom sizetextResult"
-                        type="text"
-                      />
-                    </div> -->
                     <label class="w3-margin-bottom"
                     ><b>ถ่ายรูปยา (ให้เห็นจำนวนยาที่อยู่ภายในซอง)</b></label
                     >
@@ -560,8 +576,30 @@ session_start();
                       />
                     </div>
                     <label class="w3-margin-bottom"
+                    ><b>กรณีลืมรับประทานยา</b></label
+                    >
+                    <div class="form-check">
+                      <label class="w3-margin-bottom">
+                      ระยะเวลาที่ลืมรับประทานยา :
+                      </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" class="form-check-input" name="lost"></input>
+                      <label class="form-check-label">
+                      ลืมทานยาไม่เกิน 12 ชั่วโมง
+                      </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="radio" class="form-check-input" name="lost"></input>
+                      <label class="form-check-label">
+                      ลืมทานยาเกิน 12 ชั่วโมง
+                      </label>
+                      <br/>
+                      <label class="w3-margin-bottom">
+                      จำนวนความถี่ :
+                      </label>
+                      <input type="text" class="sizetextHz"></input>
+                    </div>
+                    <label class="w3-margin-bottom"
                     ><b>บันทึกประจำวัน</b></label
                     >
+                    <p class="card-text">*จดบันทึกทุกครั้งที่ลืมรับประทานยา</p>
                     <div class="row row-cols-lg-auto input-from">
                       <input
                       class="w3-input w3-border w3-margin-bottom sizetextcomment"
