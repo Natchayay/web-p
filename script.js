@@ -17,42 +17,49 @@ function handleChange(event, id, errorElement) {
   validateAllInputs();
 }
 
-function validateInput(id, value) {
-  let error = "";
-  switch (id) {
-    case "quantity":
-      const setnumber = document.getElementById("setnumber").value;
-      if (value !== setnumber) error = "*รับประทานยาไม่ถูกต้อง";
-      break;
-    default:
-      console.log("Unknwon id");
-  }
-  return error;
-}
-
-// function validateAllInputs() {
-//   let pass = true;
-//   for (const input of inputArray) {
-//     const id = input.getAttribute("id");
-//     const value = input.value;
-//     pass = pass && validateInput(id, value) === "";
+// function validateInput(id, value) {
+//   let error = "";
+//   switch (id) {
+//     case "quantity1":
+//       const setnumber1 = document.getElementById("setnumber1").value;
+//       if (value !== setnumber1) error = "*รับประทานยาไม่ถูกต้อง";
+//       break;
+//       case "quantity2":
+//       const setnumber2 = document.getElementById("setnumber2").value;
+//       if (value !== setnumber2) error = "*รับประทานยาไม่ถูกต้อง";
+//       break;
+//       case "quantity3":
+//       const setnumber3 = document.getElementById("setnumber3").value;
+//       if (value !== setnumber3) error = "*รับประทานยาไม่ถูกต้อง";
+//       break;
+//       case "quantity4":
+//       const setnumber4 = document.getElementById("setnumber4").value;
+//       if (value !== setnumber4) error = "*รับประทานยาไม่ถูกต้อง";
+//       break;
+//       case "quantity5":
+//       const setnumber5 = document.getElementById("setnumber5").value;
+//       if (value !== setnumber5) error = "*รับประทานยาไม่ถูกต้อง";
+//       break;
+//       case "quantity6":
+//       const setnumber6 = document.getElementById("setnumber6").value;
+//       if (value !== setnumber6) error = "*รับประทานยาไม่ถูกต้อง";
+//       break;
+//       case "quantity7":
+//       const setnumber7 = document.getElementById("setnumber7").value;
+//       if (value !== setnumber7) error = "*รับประทานยาไม่ถูกต้อง";
+//       break;
+//     default:
+//       console.log("Unknwon id");
 //   }
+//   return error;
 // }
 
 function logSubmit(event) {
   event.preventDefault();
-  // let output = "";
-  // const formElements = event.target;
-  // for (const formElement of formElements) {
-  //   const id = formElement.getAttribute("id");
-  //   if (id !== "btn") {
-  //     output += `${id} : ${formElement.value} \n`;
-  //   }
-  // }
-
-  alert(output);
+  alert("บันทึกข้อมูลเรียบร้อยแล้ว");
 
   for (const input of inputArray) {
     input.value = "";
   }
+  
 }
