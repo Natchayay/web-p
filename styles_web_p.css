@@ -57,11 +57,22 @@ body {
   background-color: #e9e9e9;
 }
 
+.card_1 {
+  background-color: #ffcc33;
+  border-radius: 10px;
+}
+
 .card-title-head {
   display: flex;
   justify-content: center;
   margin: 1rem;
   font-size: 25px;
+}
+
+.card-title-head_1 {
+  display: flex;
+  margin: 1rem 0rem;
+  font-size: 16px;
 }
 
 .card-title {
@@ -107,19 +118,20 @@ body {
   width: 10em;
 }
 
+.sizetextHz{
+  width: 10em;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom:1px solid rgb(194, 193, 193);
+}
+
 .sizetextcomment{
   width: 45em;
 }
 
-/* .textTIME{
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-} */
-
-.knowledge{
-  display: flex;
-  flex-direction: row;
+.form-check{
+  margin-left: 1.2em;
 }
 
 .card-text{
@@ -127,7 +139,7 @@ body {
   font-weight: bold;
 }
 
-#setnumber{
+.setnumber{
   border: none;
   margin-top: 15px;
   text-align: center;
@@ -140,7 +152,16 @@ body {
 /* ----------------------------------------------------------------- */
 .information {
   padding: 1rem 3rem;
-  margin: 0rem 5rem 2rem 5rem;
+  margin: 0rem 2rem 2rem 5rem;
+}
+
+.information_1 {
+  cursor: text;
+  padding: 1rem 1rem;
+}
+
+.information_1 b{
+  text-decoration: underline;
 }
 
 .table {
@@ -198,8 +219,16 @@ tbody {
 /* --------------------------------------------- */
 
 .btn-last {
-  width: 100px;
+  width: 80px;
   height: 40px;
-  background: linear-gradient(180deg, #d15fee 0%, #9a32cd 100%);
-  border-radius: 10px;
+  background-color: rgb(34, 34, 255);
+  color: white;
+  border: 1px solid black;
+}
+
+/* ------------------------------------------------ */
+@media print{
+  #print,#btn_01{
+     display: none;
+  }
 }
